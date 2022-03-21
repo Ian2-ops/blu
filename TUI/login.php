@@ -12,14 +12,22 @@ if (isset($_POST['pengguna_baru'])) {
         fwrite($fh, "");
         fclose($fh);
         $alert = "<div class='alert alert-success'>Data berhasil ditambah</div>";
-        $_SESSION['nik'] = $nik;
-        $_SESSION['nama'] = $nama;
-        echo "<meta http-equiv='refresh', content='2; url='index.php'>";
+        $_SESSION['nik']=$nik;
+        $_SESSION['nama']=$nama;
+        echo "<meta http-equiv='refresh', content='2; url=index.php'>";
     } else {
         $alert = "<div class='alert alert-danger'>Data sudah ada</div>";
     }
-} elseif (isset($_POST['masuk'])) {
-    echo "";
+} elseif (isset($_POST['masuk'])){
+    if (!empty(file_exists($file))) {
+        $alert="<div class='alert alert-success'>Anda berhasil masuk</div>";
+        $_SESSION['nik']=$nik;
+        $_SESSION['nama']=$nama;
+        echo "<meta http-equiv='refresh', content='2; url=index.php'>";
+    }
+    else{
+        $alert="<div class='alert alert-danger'>Anda gagal masuk</div>";
+    }
 }
 
 ?>
