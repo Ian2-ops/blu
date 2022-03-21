@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-if (!empty($_SESSION['nik'])) {
+if(!empty($_SESSION['nik'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +14,19 @@ if (!empty($_SESSION['nik'])) {
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    indwx
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+
+            </div>
+
+            <div class="col-lg-9">
+                <?php include"navigasi.php"; ?>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
 <?php 

@@ -5,7 +5,6 @@ $nik = @$_POST['nik'];
 $nama = @$_POST['nama'];
 $file = "file/" . $nik . "-" . $nama . ".txt";
 
-
 if (isset($_POST['pengguna_baru'])) {
     if (empty(file_exists($file))) {
         $fh = fopen($file, "w");
@@ -68,7 +67,6 @@ if (isset($_POST['pengguna_baru'])) {
             </div>
         </div>
     </div>
-
 
     <script src="bs/js/bootstrap.js"></script>
     <script src="jquery/jquery.js"></script>
